@@ -25,7 +25,6 @@ var chartGroup = svg.append("g")
 
 
 var chosenXAxis = "poverty";
-var chosenYAxis = "healthcare";
 
 
 function xScale(censudata, chosenXAxis) {
@@ -61,15 +60,6 @@ function renderCircles(circlesGroup, newXScale, chosenXAxis) {
   
     return circlesGroup;
   }
-  function renderText(textGroup, newXScale, chosenXAxis) {
-
-    textGroup.transition()
-      .duration(2000)
-      .attr('x', d => newXScale(d[chosenXAxis]))
-      .attr('y', d => newYScale(d[chosenYAxis]));
-
-    return textGroup
-}
 
   function updateToolTip(chosenXAxis, circlesGroup) {
 
